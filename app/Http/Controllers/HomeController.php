@@ -97,7 +97,8 @@ class HomeController extends Controller
 
     public function filterSubmit(Request $request)
     {
-        $products = Product::orderBy('title', 'ASC');
+        $products = Product::join('subcategories as sc', 'sc.id', '=', 'products.subcategory_id')
+        ->join('categories as c', 'c.id', '=', 'sc.category_id');
         
         if($request->title != NULL)
         {
@@ -107,7 +108,7 @@ class HomeController extends Controller
 
         if($request->category != 0)
         {
-            $products->where('category', $request->category);
+            $products->where('c.id', $request->category);
         }
 
         if($request->subcategory != 0)
