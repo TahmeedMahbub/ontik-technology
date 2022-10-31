@@ -1,0 +1,9 @@
+===FOLLOW BELOW STEPS===
+
+1. Clone Project: 
+2. Rename <.env.example> file <.env> file
+3. Import the given sql file named <laravel_evaluation.sql> from SQL folder.
+4. =>composer update
+5. =>php artisan key:generate
+6. =>php artisan migrate
+7. =>php artisan serve

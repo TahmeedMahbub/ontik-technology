@@ -14,7 +14,8 @@
                         </div>
                     @endif
 
-                    {{ __('You are logged in!') }}
+                    
+                    <img src="https://ontiktechnology.com/assets/images/ontik-logo-blue.png" alt="" height="125px">
                 </div>
             </div>
         </div>

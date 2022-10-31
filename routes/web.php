@@ -19,4 +19,16 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::get('/create', [App\Http\Controllers\HomeController::class, 'create'])->name('create');
+
+Route::post('/create', [App\Http\Controllers\HomeController::class, 'createSubmit'])->name('create.submit');
+
+Route::get('/list', [App\Http\Controllers\HomeController::class, 'list'])->name('list');
+
+Route::get('/delete/{id}', [App\Http\Controllers\HomeController::class, 'delete'])->name('delete');
+
+Route::get('/filter', [App\Http\Controllers\HomeController::class, 'filter'])->name('filter');
+
+Route::post('/filter', [App\Http\Controllers\HomeController::class, 'filterSubmit'])->name('filter.submit');
