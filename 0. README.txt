@@ -1,6 +1,6 @@
 ===FOLLOW BELOW STEPS===
 
-1. Clone Project: 
+1. Clone Project: https://github.com/TahmeedMahbub/ontik-technology.git
 2. Rename <.env.example> file <.env> file
 3. Import the given sql file named <laravel_evaluation.sql> from SQL folder.
 4. =>composer update
