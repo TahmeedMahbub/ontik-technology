@@ -18,6 +18,9 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+
+    <script src="https://kit.fontawesome.com/yourcode.js" crossorigin="anonymous"></script>
+
 </head>
 <body>
     <div id="app">
@@ -28,15 +31,15 @@
                 </a>
                 
                 <a class="navbar-brand" href="{{ url('/create') }}">
-                    &emsp;&emsp;Product Insert
+                    &emsp;<i class="bi bi-plus-square-fill"></i> Add Product
                 </a>
                 
                 <a class="navbar-brand" href="{{ url('/list') }}">
-                    &emsp;&emsp;Product List
+                    &emsp;<i class="bi bi-list-stars"></i> All Products
                 </a>
                 
                 <a class="navbar-brand" href="{{ url('/filter') }}">
-                    &emsp;&emsp;Filter Product
+                    &emsp;<i class="bi bi-search"></i> Filter Product
                 </a>
 
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">

@@ -69,6 +69,7 @@ class HomeController extends Controller
         $product->save();
 
         $subcategories = Subcategory::all();
+        // return response()->json(['message' => $product]);
         return view('create')->with('subcategories', $subcategories);
     }
 
@@ -84,8 +85,7 @@ class HomeController extends Controller
         if($product)
         {$product->delete();}
         
-
-        return redirect()->route('list');
+        return response()->json(['message' => 'Product Has Been Deleted Successfully!']);
     }
 
     public function filter()

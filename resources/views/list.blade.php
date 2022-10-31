@@ -34,7 +34,7 @@
                         </thead>
                         <tbody>
                             @foreach($products as $product)
-                            <tr>
+                            <tr id="pid{{$product->id}}">
                                 <td>{{$loop->iteration}}</td>
                                 <td>
                                     <?php
@@ -56,7 +56,7 @@
                                         {echo "Description Unavailable!";}
                                 ?>
                                 </td>
-                                <td><a href="{{route('delete', $product->id)}}" class="btn btn-danger">Delete</a></td>
+                                <td><a href="javascript:void(0)" onclick="deleteProduct({{$product->id}})" class="btn btn-danger">Delete</a></td>
                             </tr>
                             @endforeach
                         </tbody>
@@ -75,6 +75,25 @@
     $(document).ready( function () {
         $('#allProducts').DataTable();
     } );
+</script>
+<script>
+    function deleteProduct(id)
+    {
+        if(confirm("Are you sure to delete this product?"))
+        {
+            $.ajax({
+                url:'/delete/'+id,
+                type: 'DELETE',
+                data:{
+                    _token : $("input[name=_token]").val()
+                },
+                success: function(response)
+                {
+                    $("#pid"+id).remove();
+                }
+            })
+        }
+    }
 </script>
 </body>
 </html>

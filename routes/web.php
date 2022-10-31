@@ -27,7 +27,7 @@ Route::post('/create', [App\Http\Controllers\HomeController::class, 'createSubmi
 
 Route::get('/list', [App\Http\Controllers\HomeController::class, 'list'])->name('list');
 
-Route::get('/delete/{id}', [App\Http\Controllers\HomeController::class, 'delete'])->name('delete');
+Route::delete('/delete/{id}', [App\Http\Controllers\HomeController::class, 'delete'])->name('delete');
 
 Route::get('/filter', [App\Http\Controllers\HomeController::class, 'filter'])->name('filter');
 
